@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-canvas font-sans text-pine antialiased;
+  }
+  ::selection {
+    background-color: #2d6a4f;
+    color: #f8faf8;
+  }
+  section[id] {
+    scroll-margin-top: 108px;
+  }
+}
+
+/* Clinical range slider — restraint, no chrome */
+.aethel-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: #dfe6e2;
+  outline: none;
+}
+.aethel-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 9999px;
+  background: #16201e;
+  border: 3px solid #f8faf8;
+  box-shadow: 0 0 0 1px #dfe6e2;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.aethel-range::-webkit-slider-thumb:hover {
+  transform: scale(1.08);
+}
+.aethel-range::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 9999px;
+  background: #16201e;
+  border: 3px solid #f8faf8;
+  box-shadow: 0 0 0 1px #dfe6e2;
+  cursor: pointer;
+}
+.aethel-range::-moz-range-track {
+  height: 2px;
+  background: #dfe6e2;
+}
